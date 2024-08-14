@@ -38,8 +38,8 @@ export const SocialMedia = () => {
     <>
     <h1 className='mb-3'>Оставайтесь на связи</h1>
     <div className="flex gap-5">
-        {socials.map(({icon: Icon,href}) => (
-            <div className="rounded-full overflow-hidden p-1">
+        {socials.map(({icon: Icon,href,id}) => (
+            <div key={id} className="rounded-full overflow-hidden p-1">
                 <a href={href}>{<Icon/>}</a>
             </div>
         ))}
