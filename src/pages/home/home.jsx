@@ -1,10 +1,13 @@
 import React from "react";
-import { useAllProduct } from "./service/query/useAllProduct";
+// import { useAllProduct } from "./service/query/useAllProduct";
 import { Carousel } from "../../components/carousel/carousel";
 import { CatalogCarousel } from "../../components/catalog-carousel/catalog-carousel";
+import { useGetPhones } from "./service/query/useGetPhones";
 
 export const Home = () => {
-  const { data, isLoading } = useAllProduct();
+  const { data, isLoading } = useGetPhones();
+
+  const phones6 = data.slice(0,6)
 
   if (isLoading) return <h1>loading!!!</h1>;
 
@@ -17,15 +20,18 @@ export const Home = () => {
       <div className="container">
         <CatalogCarousel/>
       </div>
-      {/* <div className="grid grid-cols-10">
-        {data.map((item) => (
+      <div className="container">
+      <div className="grid grid-cols-6">
+        {phones6.map((item) => (
           <div className="border-2 " key={item.id}>
-            <strong>{item.text}</strong>
             <img src={item.img} alt="" />
+            <strong>{item.text}</strong>
             <h1>{item.title}</h1>
+            <h1>{item.price} sum</h1>
           </div>
         ))}
-      </div> */}
+      </div>
+      </div>
     </>
   );
 };
