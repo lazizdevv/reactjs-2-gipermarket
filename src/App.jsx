@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layouts/main-layout";
 import { routes } from "./routes/routes";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

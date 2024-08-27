@@ -14,7 +14,10 @@ export default {
         primary:"#5B5CE2",
         secondary:"#333333",
         accent:"#F6F6F6"
-      }
+      },
+      scrollbar: {
+        hidden: 'scrollbar-hidden', // O'zgarishlar
+      },
     },
   },
   plugins: [],

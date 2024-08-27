@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Search } from "../../components/search";
+import { CartStatus } from "../../components/cart-status";
+import { FavoritesStatus } from "../../components/favorites-status";
 import { LogoIcon } from "../../assets/svg/LogoIcon";
 import { AccountIcon } from "../../assets/svg/AccountIcon";
-import { CartIcon } from "../../assets/svg/CartIcon";
-import { HeartIcon } from "../../assets/svg/HeartIcon";
-import { Search } from "../../components/search";
-import { Button } from "../../ui/button/button";
 import { MenuIcon } from "../../assets/svg/MenuIcon";
+import { Button } from "../../ui/button/button";
 
 export const Header = () => {
   return (
@@ -34,7 +34,9 @@ export const Header = () => {
 
         <div className="flex flex-wrap justify-between gap-5 items-center py-5">
           <div className="flex justify-between w-fit gap-14">
-            <LogoIcon />
+            <Link to={"/"}>
+              <LogoIcon />
+            </Link>
             <Button
               startIcon={<MenuIcon />}
               children={"Каталог"}
@@ -45,29 +47,26 @@ export const Header = () => {
             <Search />
           </div>
 
-          <div className="flex gap-5">
-            <Link className="w-16 h-11 text-center text-base">
+          <div className="flex gap-5 items-center">
+            <Link className="w-16 h-fit text-center text-base">
               <div className="mx-auto w-fit">
                 <AccountIcon />
               </div>
               <p>Войти</p>
             </Link>
-            <Link className="w-fit h-11 text-center text-base">
-              <div className="mx-auto w-fit">
-                <HeartIcon />
-              </div>
+
+            <Link to={"/favorites"} className="h-fit text-center text-base">
+              <FavoritesStatus />
               <p>Избранное</p>
             </Link>
-            <Link className="w-fit h-11 text-center text-base">
-              <div className="mx-auto w-fit">
-                <CartIcon />
-              </div>
+
+            <Link to={"/cart"} className="h-fit text-center text-base">
+              <CartStatus />
               <p>Корзина</p>
             </Link>
           </div>
         </div>
       </div>
-      
     </>
   );
 };

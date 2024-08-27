@@ -6,9 +6,15 @@ import { Loading } from "../../components/loading";
 
 export const CatalogSingle = () => {
   const { categoryName } = useParams();
-  const { data: products, isLoading, isError,isFetched,isPending } = useSingleCatalog(categoryName);
+  const {
+    data: products,
+    isLoading,
+    isError,
+    isFetched,
+    isPending,
+  } = useSingleCatalog(categoryName);
 
-  if (isFetched,isLoading,isPending) return <Loading/>;
+  if ((isFetched, isLoading, isPending)) return <Loading />;
   if (isError) return <div>Error loading products.</div>;
 
   return (

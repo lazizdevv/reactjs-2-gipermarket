@@ -1,3 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.slick-arrow::before {
+  color: red;
+  font-size: 28px;
+}
+
+.slick-prev {
+  top: -50px;
+  left: 92%;
+}
+.slick-next {
+  top: -50px;
+  right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .slick-arrow::before {
+    font-size: 40px;
+  }
+  .slick-prev {
+    top: 150px;
+    left: -25px;
+  }
+  .slick-next {
+    top: 150px;
+    right: 0px;
+  }
+}
