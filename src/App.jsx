@@ -1,24 +1,32 @@
 import { Route, Routes } from "react-router-dom";
-import { MainLayout } from "./layouts/main-layout";
 import { routes } from "./routes/routes";
+import { lazy, Suspense } from "react";
+import { MainLayout } from "./layouts/main-layout";
+import { Loading } from "./components/loading";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          {routes.map(({ id, path, component: Component }) => (
-            <Route
-              key={id}
-              index={!path ? true : undefined}
-              path={path}
-              element={<Component />}
-            />
-          ))}
-        </Route>
-      </Routes>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            {routes.map(({ id, path, component }) => {
+              const LazyComponent = lazy(component);
+
+              return (
+                <Route
+                  key={id}
+                  index={!path ? true : undefined}
+                  path={path}
+                  element={<LazyComponent />}
+                />
+              );
+            })}
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   );
 }

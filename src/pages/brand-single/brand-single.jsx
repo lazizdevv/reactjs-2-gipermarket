@@ -4,7 +4,7 @@ import { useSingleBrands } from "../../service/useSingleBrands";
 import { Card } from "../catalog-single/components/card/card";
 import { Loading } from "../../components/loading";
 
-export const BrandSingle = () => {
+const BrandSingle = () => {
   const { brand } = useParams();
 
   const { data, isLoading } = useSingleBrands();
@@ -22,3 +22,5 @@ export const BrandSingle = () => {
     </>
   );
 };
+
+export default BrandSingle;

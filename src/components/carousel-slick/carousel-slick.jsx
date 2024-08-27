@@ -68,7 +68,7 @@ export const CarouselSlick = ({ children }) => {
   };
 
   return (
-    <Slider className="border-2 mt-10" {...settings}>
+    <Slider className="mt-10" {...settings}>
       {children?.map((item) => (
         <ProductCard key={item.id} {...item} />
       ))}

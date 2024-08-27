@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { ProductCard } from "../../components/product-card/product-card";
 
-export const Favorites = () => {
+const Favorites = () => {
   const { favoritesList } = useSelector((state) => state.favorites);
   return (
     <>
@@ -16,3 +16,5 @@ export const Favorites = () => {
     </>
   );
 };
+
+export default Favorites;

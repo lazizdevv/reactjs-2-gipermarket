@@ -18,7 +18,7 @@ export const Search = () => {
 
     <div className="absolute flex justify-center w-full z-20 left-0 top-32">
     {inputValue.length >= 3 && (
-          <div className="bg-white z-2 grid grid-cols-7 gap-5 p-3 md:p-5 w-full border rounded-lg shadow-md shadow-primary bg-special max-w-screen-xl">
+          <div className="bg-white overflow-y-scroll h-72 lg:h-[500px] z-2 grid grid-cols-2 lg:grid-cols-7 gap-5 p-3 md:p-5 w-full border rounded-lg shadow-md shadow-primary bg-special max-w-screen-xl">
             {data?.map((item) => (
               <Card key={item.id} {...item} />
             ))}

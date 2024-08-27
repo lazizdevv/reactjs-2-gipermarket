@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Card } from "./components/card/card";
 import { Loading } from "../../components/loading";
 
-export const CatalogSingle = () => {
+const CatalogSingle = () => {
   const { categoryName } = useParams();
   const {
     data: products,
@@ -28,3 +28,5 @@ export const CatalogSingle = () => {
     </div>
   );
 };
+
+export default CatalogSingle;

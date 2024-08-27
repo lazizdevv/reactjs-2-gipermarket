@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { BuyCard } from "../../components/buy-card";
 
-export const Cart = () => {
+const Cart = () => {
   const { productList } = useSelector((state) => state.product);
   return (
     <>
@@ -26,3 +26,5 @@ export const Cart = () => {
     </>
   );
 };
+
+export default Cart;

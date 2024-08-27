@@ -4,7 +4,7 @@ import { useAllProducts } from "../../service/query/useAllProducts";
 import { ProductCard } from "../../components/product-card/product-card";
 import { Loading } from "../../components/loading";
 
-export const ProductDetail = () => {
+const ProductDetail = () => {
   const { id } = useParams();
   // console.log(id);
 
@@ -23,3 +23,5 @@ export const ProductDetail = () => {
     </>
   );
 };
+
+export default ProductDetail;

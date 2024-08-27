@@ -9,7 +9,7 @@ import { useGetNotebooks } from "../../service/query/useGetNotebooks";
 import { SimpleCard } from "../../components/simple-card/simple-card";
 import { CarouselSlick } from "../../components/carousel-slick/carousel-slick";
 
-export const Home = () => {
+const Home = () => {
   const { data: Phones, isLoading } = useGetPhones();
   const { data: Notebooks } = useGetNotebooks();
 
@@ -21,7 +21,7 @@ export const Home = () => {
       <div className="container">
         <CatalogCarousel />
       </div>
-      <div className="container my-10 border-2">
+      <div className="container my-10">
         <h1 className="mb-5 text-2xl font-semibold">Смартфоны и планшеты</h1>
         <CarouselSlick>{Phones}</CarouselSlick>
       </div>
@@ -79,3 +79,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home

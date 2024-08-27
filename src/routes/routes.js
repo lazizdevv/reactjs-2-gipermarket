@@ -1,40 +1,33 @@
 import { nanoid } from "nanoid";
-import { Home } from "../pages/home";
-import { CatalogSingle } from "../pages/catalog-single/catalog-single";
-import { BrandSingle } from "../pages/brand-single/brand-single";
-import { ProductDetail } from "../pages/product-detail/product-detail";
-import { Cart } from "../pages/cart/cart";
-import { Favorites } from "../pages/favorites/favorites";
 
 export const routes = [
-    {
-        component:Home,
-        id:nanoid()
-    },
-    {
-        component:CatalogSingle,
-        path:"/:categoryName",
-        id:nanoid()
-    },
-    {
-        component:BrandSingle,
-        path:"single-brand/:brand",
-        id:nanoid()
-    },
-    {
-        component:ProductDetail,
-        path:"product-detail/:id",
-        id:nanoid()
-    },
-    {
-        component:Cart,
-        path:"cart",
-        id:nanoid()
-    },
-    {
-        component:Favorites,
-        path:"favorites",
-        id:nanoid()
-    },
-    
+  {
+    component: () => import("../pages/home/home"),
+    id: nanoid(),
+  },
+  {
+    component: () => import("../pages/catalog-single/catalog-single"),
+    path: "/:categoryName",
+    id: nanoid(),
+  },
+  {
+    component: () => import("../pages/brand-single/brand-single"),
+    path: "single-brand/:brand",
+    id: nanoid(),
+  },
+  {
+    component: () => import("../pages/product-detail/product-detail"),
+    path: "product-detail/:id",
+    id: nanoid(),
+  },
+  {
+    component: () => import("../pages/cart/cart"),
+    path: "cart",
+    id: nanoid(),
+  },
+  {
+    component: () => import("../pages/favorites/favorites"),
+    path: "favorites",
+    id: nanoid(),
+  },
 ];
