@@ -33,7 +33,7 @@ const Home = () => {
           <div className="mb-5">
             <h1 className="text-2xl font-normal pb-10">Смартфоны и планшеты</h1>
             <div className="flex flex-col gap-4">
-              {Phones.slice(6, 9).map((phone) => (
+              {Phones?.slice(6, 9).map((phone) => (
                 <SimpleCard key={phone.id} {...phone} />
               ))}
             </div>
@@ -53,7 +53,7 @@ const Home = () => {
           <div className="mb-5">
             <h1 className="text-2xl font-normal pb-10">Смартфоны и планшеты</h1>
             <div className="flex flex-col gap-4">
-              {Phones.slice(9, 12).map((phone) => (
+              {Phones?.slice(9, 12).map((phone) => (
                 <SimpleCard key={phone.id} {...phone} />
               ))}
             </div>
